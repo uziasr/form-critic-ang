@@ -1,0 +1,9 @@
+<div class="card">
+    <iframe width="420" height="345" [src]="urlCleaner(aCase.video_link)">
+        <!-- src="{{aCase.video_link}}" -->
+    </iframe>
+    <div class="card-body">
+        <h5 class="card-title">{{ aCase.title }}</h5>
+        <p class="card-text">{{ aCase.description }}</p>
+        <p>{{ aCase.video_link }}</p>
+</div>
