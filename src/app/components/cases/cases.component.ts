@@ -23,6 +23,7 @@ export class CasesComponent implements OnInit {
         aCase.video_link = embeddedLink;
         return aCase;
     });
+      this.cases.pop();
     });
   }
 }
