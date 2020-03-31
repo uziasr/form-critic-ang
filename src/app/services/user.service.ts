@@ -21,4 +21,10 @@ export class UserService {
     const userEP = `${this.baseUrl}/users/register`;
     return this.http.post<User>(userEP, user, httpOptions);
   }
+
+  userLogin(user): Observable<any> {
+    console.log('this is logging in a user');
+    const loginEP = `${this.baseUrl}/users/login`;
+    return this.http.post<User>(loginEP, user, httpOptions);
+  }
 }
