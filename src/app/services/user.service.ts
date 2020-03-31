@@ -16,7 +16,7 @@ export class UserService {
   baseUrl = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }
 
-  createUser(user): Observable<User> {
+  createUser(user): Observable<any> {
     console.log('this is creating user');
     const userEP = `${this.baseUrl}/users/register`;
     return this.http.post<User>(userEP, user, httpOptions);
