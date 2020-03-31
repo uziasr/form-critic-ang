@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Case } from '../models/Case';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/User';
 import { Observable } from 'rxjs';
 
@@ -13,14 +12,10 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CasesService {
+export class UserService {
   baseUrl = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }
 
-  getCases(): Observable<Case[]> {
-    const getCasesEP = `${this.baseUrl}/posts`;
-    return this.http.get<Case[]>(getCasesEP);
-  }
   createUser(user): Observable<User> {
     console.log('this is creating user');
     const userEP = `${this.baseUrl}/users/register`;

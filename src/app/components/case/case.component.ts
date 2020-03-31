@@ -18,7 +18,6 @@ export class CaseComponent implements OnInit {
 
 
   urlCleaner(url: string): SafeUrl {
-    console.log("hello", url);
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }

@@ -1,0 +1,31 @@
+<form (ngSubmit)="newUser()">
+    <input 
+    name='name'
+    type='text'
+    placeholder="name"
+    [(ngModel)]="name"
+    required
+    />
+    <input 
+    name='username'
+    type='text'
+    placeholder="username"
+    [(ngModel)]="username"
+    required    
+    />
+    <input 
+    name='email'
+    type='text'
+    placeholder="email"
+    [(ngModel)]="email"
+    required
+    />
+    <input 
+    name='password'
+    type='password'
+    placeholder="password"
+    [(ngModel)]="password"
+    required
+    />
+    <input type='submit' value='Submit'/>
+</form>
