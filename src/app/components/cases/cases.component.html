@@ -1,7 +1,12 @@
-<div class="card-deck">
-    <app-case 
-    *ngFor="let aCase of cases"
-    [aCase]="aCase">
-      <p>Hello</p>
-  </app-case>
+<div class="post-wrapper">
+  <div>
+    <button *ngIf="loggedIn()">+ Post</button>
   </div>
+  <div class="card-deck">
+      <app-case 
+      *ngFor="let aCase of cases"
+      [aCase]="aCase">
+        <p>Hello</p>
+    </app-case>
+  </div>
+</div>

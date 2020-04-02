@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       password: this.password
     };
     const newRouter = this.router;
-
+    console.log(credentials);
     this.service.userLogin(credentials).subscribe({
       next(res) {
         console.log(res);

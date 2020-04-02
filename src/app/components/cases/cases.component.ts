@@ -26,4 +26,7 @@ export class CasesComponent implements OnInit {
       this.cases.pop();
     });
   }
+  loggedIn() {
+    return localStorage.getItem('authorization') ? true : false;
+  }
 }
