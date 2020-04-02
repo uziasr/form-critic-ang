@@ -9,6 +9,7 @@ import { CasesComponent } from './components/cases/cases.component';
 import { CaseComponent } from './components/case/case.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { CasePostComponent } from './components/case-post/case-post.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './components/login/login.component';
     CasesComponent,
     CaseComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    CasePostComponent
   ],
   imports: [
     BrowserModule,
