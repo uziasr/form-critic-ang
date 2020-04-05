@@ -1,7 +1,7 @@
 <div class="nav-bar">
     <div *ngIf="loggedIn; else loggedOut" class="link-wrapper logged-in">    
         <a class="link" href="/">Home</a>
-        <a class="link" (click)="logOut()" href="">logout</a>
+        <a class="link" (click)="logOut($event)" href="">logout</a>
     </div>
     <ng-template #loggedOut>
         <div class="link-wrapper">

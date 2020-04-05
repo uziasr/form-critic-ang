@@ -1,0 +1,45 @@
+<div class="form-parent">
+    <div class="form-wrapper">
+        <form (ngSubmit)="addPost()">
+            <div class="form-group">
+                <label>Title</label>
+                <input
+                class="form-control" 
+                name='title'
+                type='text'
+                placeholder="Title"
+                [(ngModel)]="title"
+                required
+                />
+            </div>
+            <div class="form-group">
+                <label>YouTube Link</label>
+                <input
+                class="form-control" 
+                name='video_link'
+                type='text'
+                placeholder="Please enter a YouTube Link"
+                [(ngModel)]="video_link"
+                required    
+                />
+            </div>
+            <div class="form-group">
+                <label>Description</label>    
+                <textarea
+                class="form-control" 
+                name='description'
+                type='text'
+                placeholder="description"
+                [(ngModel)]="description"
+                placeholder="Enter a detailed description"
+                required
+                ></textarea>
+            </div>
+            <input 
+            type='submit' 
+            value='Submit'
+            class="btn btn-primary"
+            />
+        </form>
+    </div>   
+</div>

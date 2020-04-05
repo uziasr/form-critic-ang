@@ -10,6 +10,7 @@ import { CasesService } from '../../services/cases.service';
 export class CasesComponent implements OnInit {
 
   cases: Case[];
+  addingPost = false;
 
   constructor( private casesService: CasesService) { }
 
@@ -23,10 +24,15 @@ export class CasesComponent implements OnInit {
         aCase.video_link = embeddedLink;
         return aCase;
     });
-      this.cases.pop();
+      // this.cases.pop();
     });
   }
   loggedIn() {
     return localStorage.getItem('authorization') ? true : false;
+  }
+  setAdding(event) {
+    console.log(event);
+    event.preventDefault();
+    this.addingPost = !this.addingPost;
   }
 }

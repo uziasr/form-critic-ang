@@ -10,6 +10,13 @@ const httpOptions = {
   })
 };
 
+const httpOptionsLoggedIn = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'authorization': localStorage.getItem('authorization')
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,9 +28,10 @@ export class CasesService {
     const getCasesEP = `${this.baseUrl}/posts`;
     return this.http.get<Case[]>(getCasesEP);
   }
-  createUser(user): Observable<User> {
-    console.log('this is creating user');
-    const userEP = `${this.baseUrl}/users/register`;
-    return this.http.post<User>(userEP, user, httpOptions);
+
+  createPost(postObj): Observable<any> { // determine if type will be any or Case
+    const postEP = `${this.baseUrl}/posts`;
+    console.log(postEP, postObj);
+    return this.http.post<any>(postEP, postObj, httpOptionsLoggedIn);
   }
 }

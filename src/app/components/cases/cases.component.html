@@ -1,12 +1,18 @@
 <div class="post-wrapper">
   <div>
-    <button *ngIf="loggedIn()">+ Post</button>
+    <button (click)="setAdding($event)" *ngIf="!addingPost; else clearButton">+ Post</button>
+    <ng-template #clearButton>
+      <button class="clear-button" (click)="setAdding($event)">Clear</button>
+    </ng-template>
   </div>
-  <div class="card-deck">
+  <div *ngIf="!addingPost; else postForm" class="card-deck">
       <app-case 
       *ngFor="let aCase of cases"
       [aCase]="aCase">
         <p>Hello</p>
     </app-case>
   </div>
+  <ng-template #postForm class="case-form">
+    <app-case-post class="case-post"></app-case-post>
+  </ng-template>
 </div>
