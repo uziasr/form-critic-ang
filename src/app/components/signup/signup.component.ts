@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ export class SignupComponent implements OnInit {
   password: string;
   email: string;
 
-  constructor( private service: UserService) { }
+  constructor( private service: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,10 +25,13 @@ export class SignupComponent implements OnInit {
       password: this.password,
       email: this.email
     };
+    const newRouter = this.router;
     this.service.createUser(user).subscribe({
         // in here if user is created they should be signed in and forwarded to the dash
         next(res) {
           console.log('this is the response ', res);
+          localStorage.setItem('authorization', res.token);
+          newRouter.navigate(['/posts']);
         },
         error(err) {
           console.log(err);
@@ -36,5 +40,3 @@ export class SignupComponent implements OnInit {
   }
 
 }
-
-//"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJpbGxzZ290amVhbiIsImlhdCI6MTU4NTYyODM3MTYyMiwiZXhwIjoxNTg1NjI4NDU4MDIyfQ.g7mpzUFy638tAbTg9AsJgO28gNugkh0zWURUxl2_id8"

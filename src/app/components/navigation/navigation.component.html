@@ -1,8 +1,15 @@
 <div class="nav-bar">
-    <div class="link-wrapper">
+    <div *ngIf="loggedIn; else loggedOut" class="link-wrapper logged-in">    
         <a class="link" href="/">Home</a>
-        <a class="link" href="signup">Sign Up</a>
-        <a class="link">Login</a>
-        <a class="link">About</a>
+        <a class="link" (click)="logOut()" href="">logout</a>
     </div>
+    <ng-template #loggedOut>
+        <div class="link-wrapper">
+            <a class="link" href="/">Home</a>
+            <a class="link" href="signup">Sign Up</a>
+            <a class="link" href="login">Login</a>
+            <a class="link">About</a>
+        </div>
+    </ng-template>
+
 </div>

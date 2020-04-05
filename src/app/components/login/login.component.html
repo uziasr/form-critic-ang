@@ -1,0 +1,18 @@
+<!-- username and password only required -->
+<div class="form-parent">
+    <div class="form-wrapper">
+        <form (ngSubmit)="login()">
+            <div class="form-group">
+                <label>Username</label>
+                <input [(ngModel)]="username" name="username" type="text" class="form-control" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input class="form-control" id="exampleInputPassword1" name='password' type='password' [(ngModel)]='password' placeholder='password' required/>
+            </div>
+            <div class="form-group">
+                <input type='submit' class="btn btn-primary" value='Submit'/>
+            </div>
+        </form>
+    </div>
+</div>

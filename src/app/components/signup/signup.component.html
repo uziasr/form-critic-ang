@@ -1,31 +1,63 @@
-<form (ngSubmit)="newUser()">
-    <input 
-    name='name'
-    type='text'
-    placeholder="name"
-    [(ngModel)]="name"
-    required
-    />
-    <input 
-    name='username'
-    type='text'
-    placeholder="username"
-    [(ngModel)]="username"
-    required    
-    />
-    <input 
-    name='email'
-    type='text'
-    placeholder="email"
-    [(ngModel)]="email"
-    required
-    />
-    <input 
-    name='password'
-    type='password'
-    placeholder="password"
-    [(ngModel)]="password"
-    required
-    />
-    <input type='submit' value='Submit'/>
-</form>
+<div class="form-parent">
+    <div class="form-wrapper">
+        <form (ngSubmit)="newUser()">
+            <div class="form-group">
+                <label>Name</label>
+                <input
+                class="form-control" 
+                name='name'
+                type='text'
+                placeholder="name"
+                [(ngModel)]="name"
+                required
+                />
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input
+                class="form-control" 
+                name='username'
+                type='text'
+                placeholder="username"
+                [(ngModel)]="username"
+                required    
+                />
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>    
+                <input
+                class="form-control" 
+                name='email'
+                type='text'
+                placeholder="email"
+                [(ngModel)]="email"
+                aria-describedby="emailHelp"
+                id="exampleInputEmail1" 
+                placeholder="Enter email"
+                required
+                />
+                <small id="emailHelp" 
+                class="form-text text-muted small"
+                >
+                We'll never share your email with anyone else.
+            </small>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input
+                class="form-control" 
+                name='password'
+                type='password'
+                placeholder="password"
+                [(ngModel)]="password"
+                required
+                />
+            </div>
+            <input 
+            type='submit' 
+            value='Submit'
+            class="btn btn-primary"
+            />
+        </form>
+    </div>   
+</div>
